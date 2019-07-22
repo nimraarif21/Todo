@@ -1,10 +1,10 @@
 import functions
 
+
 def run():
 
-    title = "=====Welcome to Todo App====="
-    inputVal = 0
-    print(title)
+    inputVal=0
+    print("=====Welcome to Todo App=====")
 
     while(True):
         print("""
@@ -14,7 +14,7 @@ def run():
 4- Press 4 to delete a task.
 5- Press 5 to Exit.""")
 
-        print("\n\nEnter your input: ")
+        print("\nEnter your input: ")
         inputVal = int(input())
 
         if inputVal == 1:
@@ -27,8 +27,7 @@ def run():
             functions.deleteTask()
         else:
             break
-
-
+    
 
 if __name__ == "__main__":
     run()
