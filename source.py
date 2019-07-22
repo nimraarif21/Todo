@@ -7,6 +7,19 @@ def printTasks():
         print(str(i), end=" - ")
         print(tasks[i])
 
+def updateTask(Tindex,Tdes):
+    if Tindex <= len(tasks)-1:
+        tasks[Tindex]['description']=Tdes
+    else:
+        print("ERROR!!Please enter a valid index!!!")
+
+def newTask(Tname,Tdes):
+    newTask={}
+    newTask['name']=Tname
+    newTask['description']=Tdes
+    tasks.append(newTask)
+
+
 def run():
 
     title = "=====Welcome to Todo App====="
@@ -22,18 +35,15 @@ def run():
 5- Press 5 to Exit.""")
 
         print("\n\nEnter your input: ")
-        inputVal = input()
-        inputVal = int(inputVal)
+        inputVal = int(input())
 
         if inputVal == 1:
             print('Enter the name of the task: ', end='')
             Tname = input()
             print('Enter the description of the task: ', end='')
             Tdes = input()
-            newTask={}
-            newTask['name']=Tname
-            newTask['description']=Tdes
-            tasks.append(newTask)
+            newTask(Tname,Tdes)
+           
 
         elif inputVal == 2:
             printTasks()
@@ -43,15 +53,19 @@ def run():
             Tindex = int(input())
             print('Enter the description of the task: ', end='')
             Tdes = input()
-            if Tindex <= len(tasks)-1:
-                tasks[Tindex]['description']=Tdes
+            updateTask(Tindex,Tdes)
+            
 
         elif inputVal == 4:
             print('Enter the index of the task: ', end='')
             Tindex = int(input())
-            del tasks[Tindex]
+            if Tindex<=len(tasks)-1:
+                del tasks[Tindex]
+            else:
+                print("ERROR!!Please enter a valid index!!!")
         else:
             break
+
 
 
 if __name__ == "__main__":
