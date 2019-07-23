@@ -12,19 +12,22 @@ def run():
 2- Press 2 to list all the tasks.
 3- Press 3 to update a task.
 4- Press 4 to delete a task.
-5- Press 5 to Exit.""")
+5- Press 5 to insert at a specific index.
+5- Press 6 to Exit.""")
 
         print("\nEnter your input: ")
         inputVal = int(input())
 
         if inputVal == 1:
-            functions.newTask()
+            functions.New_task()
         elif inputVal == 2:
-            functions.printTasks()
+            functions.Print_tasks()
         elif inputVal == 3:
-            functions.updateTask()           
+            functions.Update_task()           
         elif inputVal == 4:
-            functions.deleteTask()
+            functions.Delete_task()
+        elif inputVal == 5:
+            functions.Insert_task()
         else:
             break
     
