@@ -35,13 +35,12 @@ def Insert_task():
     Tdes = input()
     print('Enter the index where you want to insert: ', end='')
     Tindex = int(input())
-    if Tindex==0 and len(tasks)==0:
-            tasks.insert(Tindex,{'name':Tname,'description':Tdes})
+    if Tindex == 0 and len(tasks) == 0:
+            tasks.insert(Tindex, {'name':Tname,'description':Tdes})
             Print_tasks()
-    elif Tindex <= len(tasks)-1:
-            tasks.insert(Tindex,{'name':Tname,'description':Tdes})
+    elif Tindex <= len(tasks) - 1:
+            tasks.insert(Tindex, {'name':Tname,'description':Tdes})
             Print_tasks()
-
     else:
             print("ERROR!!Please enter a valid index!!!")
 
